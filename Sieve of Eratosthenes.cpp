@@ -26,6 +26,7 @@ void sieve(int n, int m) {
 	cout << endl;
 	cout << b[m - 1] << endl;
 	delete[] a;
+	delete[] b;
 }
 
 int main() {
