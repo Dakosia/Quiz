@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+bool isCharsInStrUnique(string s) {
+	if (s.length() > 256) {
+		return false;
+	}
+
+	bool x[256] = { 0 };
+	for (int i = 0; i < s.length(); ++i) {
+		if (x[int(s[i])]) {
+			return false;
+		}
+		x[int(s[i])] = true;		
+	}
+	return true;
+}
+int main()
+{
+	string s;
+	getline(cin, s);
+	if (isCharsInStrUnique(s)) {
+		cout << "unique" << endl;
+	}
+	else {
+		cout << "not unique" << endl;
+	}
+
+	return 0;
+}
